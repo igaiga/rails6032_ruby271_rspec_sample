@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    memo { "MyText" }
+    title { "RubyBook" }
+    memo { "Good" }
   end
 end
