@@ -9,4 +9,14 @@ RSpec.describe "books", type: :system do
     visit "/books"
     expect(page).to have_text("Books")
   end
+
+  it "POST /books" do
+    visit "/books/new"
+    fill_in "Title", with: "RubyBook"
+    fill_in "Memo", with: "Nice"
+    click_button "Create Book"
+
+    expect(page).to have_text("Book was successfully created.")
+  end
+
 end
