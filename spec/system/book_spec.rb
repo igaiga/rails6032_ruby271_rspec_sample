@@ -6,8 +6,9 @@ RSpec.describe "books", type: :system do
   end
 
   it "GET /books" do
+    book = FactoryBot.create(:book)
     visit "/books"
-    expect(page).to have_text("Books")
+    expect(page).to have_text(book.title)
   end
 
   it "POST /books" do
@@ -18,5 +19,4 @@ RSpec.describe "books", type: :system do
 
     expect(page).to have_text("Book was successfully created.")
   end
-
 end
